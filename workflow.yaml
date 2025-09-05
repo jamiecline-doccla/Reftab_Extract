@@ -1,0 +1,10 @@
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run script
+        run: python reftab_extract.py
+        env:
+          REFTAB_PUBLIC_KEY: ${{ secrets.REFTAB_PUBLIC_KEY }}
+          REFTAB_SECRET_KEY: ${{ secrets.REFTAB_SECRET_KEY }}
